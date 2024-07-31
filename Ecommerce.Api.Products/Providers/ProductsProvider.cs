@@ -73,14 +73,14 @@ namespace Ecommerce.Api.Products.Providers
             }
         }
 
-        Task<(bool IsSuccess, IEnumerable<Models.Product> Products, string ErrorMessage)> IProductsProvider.GetProductsAsync()
-        {
-            throw new NotImplementedException();
-        }
+        //Task<(bool IsSuccess, IEnumerable<Models.Product> Products, string ErrorMessage)> IProductsProvider.GetProductsAsync()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        Task<(bool IsSuccess, Models.Product Product, string ErrorMessage)> IProductsProvider.GetProductAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
+        //Task<(bool IsSuccess, Models.Product Product, string ErrorMessage)> IProductsProvider.GetProductAsync(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

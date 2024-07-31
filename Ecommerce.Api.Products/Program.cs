@@ -44,12 +44,19 @@ builder.Services.AddDbContext<ProductsDbContext>(options =>
     options.UseInMemoryDatabase("Products");
 });
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 // Build App
 var app = builder.Build();
 
 // Configure
-app.UseRouting();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+//app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
