@@ -21,6 +21,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ISearchService, SearchService>();
 builder.Services.AddScoped<IOrdersService, OrdersService>();
 builder.Services.AddScoped<IProductsService, ProductsService>();
+builder.Services.AddScoped<ICustomersService, CustomersService>();
 
 using IHost host = Host.CreateDefaultBuilder(args).Build();
 
@@ -36,6 +37,11 @@ builder.Services.AddHttpClient("ProductsService", config =>
 builder.Services.AddHttpClient("OrdersService", config =>
 {
 	config.BaseAddress = new Uri(configuration["Services:Orders"]);
+});
+
+builder.Services.AddHttpClient("CustomersService", config =>
+{
+    config.BaseAddress = new Uri(configuration["Services:Customers"]);
 });
 
 var app = builder.Build();
